@@ -45,42 +45,77 @@ namespace KotikoBlog.Repository.BlogCategory
 {
     public class BlogCategoryRepository : HibernateDao, IBlogCategoryRepository
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public BlogCategoryModel Get(int id)
         {
             return CurrentSession.Get<BlogCategoryModel>(id);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public IList<BlogCategoryModel> GetAll()
         {
             return GetAll<BlogCategoryModel>();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public int Save(BlogCategoryModel entity)
         {
             return (int) CurrentSession.Save(entity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entities"></param>
         public void Save(IList<BlogCategoryModel> entities)
         {
             SaveAll(entities);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
         public void Update(BlogCategoryModel entity)
         {
             CurrentSession.Update(entity);
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         public Page<BlogCategoryModel> Paginated(FindRequestImpl<SearchFilter> filter)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pageRequest"></param>
+        /// <returns></returns>
         public Page<BlogCategoryModel> Paginated(PageRequest pageRequest)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public IQueryable<BlogCategoryModel> GetAllQueryable()
         {
             throw new NotImplementedException();

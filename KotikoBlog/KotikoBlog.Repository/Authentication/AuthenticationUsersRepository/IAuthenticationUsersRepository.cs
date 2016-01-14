@@ -39,18 +39,44 @@ using KotikoBlog.Repository.Abstract;
 
 namespace KotikoBlog.Repository.Authentication.AuthenticationUsersRepository
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public interface IAuthenticationUsersRepository :
         ISupportsSave<AuthenticationUsers, long>,
         IDao<AuthenticationUsers, long>,
         IQueryableDao<AuthenticationUsers, long>,
         ISearchableDao<AuthenticationUsers, long, SearchFilter>
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="hashedPassword"></param>
+        /// <returns></returns>
         AuthenticationUsers GetByUsernameAndPassword(string username, string hashedPassword);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         AuthenticationUsers GetByEmail(string email);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="CUKotikoBlog"></param>
+        /// <param name="passOld"></param>
+        /// <param name="passNew"></param>
+        /// <returns></returns>
         bool ActualizarContrasenia(long CUKotikoBlog, string passOld, string passNew);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="locked"></param>
+        /// <returns></returns>
         bool UserHasLockCode(LockCode locked);
     }
 }

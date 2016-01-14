@@ -39,8 +39,14 @@ using NHibernate.Dialect.Function;
 
 namespace KotikoBlog.Repository.Config
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class CustomDialect : MsSql2012Dialect
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public CustomDialect()
         {
             RegisterFunction(

@@ -40,39 +40,73 @@ using KotikoBlog.Repository.Abstract;
 
 namespace KotikoBlog.Repository.Authentication.AuthenticationRefreshTokenRepository
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class AuthenticationRefreshTokenRepository : HibernateDao, IAuthenticationRefreshTokenRepository
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public string Save(AuthenticationRefreshToken entity)
         {
             return (string) CurrentSession.Save(entity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
         public void Save(IList<AuthenticationRefreshToken> entity)
         {
             SaveAll(entity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
         public void Update(AuthenticationRefreshToken entity)
         {
             CurrentSession.Update(entity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public AuthenticationRefreshToken Get(string id)
         {
             return CurrentSession.Get<AuthenticationRefreshToken>(id);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public IList<AuthenticationRefreshToken> GetAll()
         {
             return GetAll<AuthenticationRefreshToken>();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pageRequest"></param>
+        /// <returns></returns>
         public Page<AuthenticationRefreshToken> Paginated(PageRequest pageRequest)
         {
             return Paginated<AuthenticationRefreshToken>(CurrentSession.QueryOver<AuthenticationRefreshToken>(),
                 pageRequest);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
         public void Delete(AuthenticationRefreshToken entity)
         {
             CurrentSession.Delete(entity);

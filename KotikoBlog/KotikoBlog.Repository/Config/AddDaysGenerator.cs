@@ -44,15 +44,29 @@ using NHibernate.Linq.Visitors;
 
 namespace KotikoBlog.Repository.Config
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class AddDaysGenerator : BaseHqlGeneratorForMethod
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public AddDaysGenerator()
         {
             SupportedMethods = new[] {ReflectionHelper.GetMethodDefinition<DateTime?>(d => d.Value.AddDays(0))};
         }
 
-        public override HqlTreeNode BuildHql(MethodInfo method, Expression targetObject,
-            ReadOnlyCollection<Expression> arguments, HqlTreeBuilder treeBuilder, IHqlExpressionVisitor visitor)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="method"></param>
+        /// <param name="targetObject"></param>
+        /// <param name="arguments"></param>
+        /// <param name="treeBuilder"></param>
+        /// <param name="visitor"></param>
+        /// <returns></returns>
+        public override HqlTreeNode BuildHql(MethodInfo method, Expression targetObject, ReadOnlyCollection<Expression> arguments, HqlTreeBuilder treeBuilder, IHqlExpressionVisitor visitor)
         {
             return treeBuilder.MethodCall("AddDays", visitor.Visit(targetObject).AsExpression(),
                 visitor.Visit(arguments[0]).AsExpression());

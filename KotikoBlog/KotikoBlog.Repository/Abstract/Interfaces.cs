@@ -145,11 +145,22 @@ namespace KotikoBlog.Repository.Abstract
         void Delete(TEntity entity);
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="Tentity"></typeparam>
+    /// <typeparam name="TId"></typeparam>
     public interface IQueryableDao<Tentity, TId>
     {
         IQueryable<Tentity> GetAllQueryable();
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="Tentity"></typeparam>
+    /// <typeparam name="TId"></typeparam>
+    /// <typeparam name="TSearch"></typeparam>
     public interface ISearchableDao<Tentity, TId, TSearch>
     {
         Page<Tentity> Paginated(FindRequestImpl<TSearch> filter);

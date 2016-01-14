@@ -44,6 +44,9 @@ using Spring.Data.NHibernate;
 
 namespace KotikoBlog.Repository
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class FluentNhibernateLocalSessionFactoryObject : LocalSessionFactoryObject
     {
         /// <summary>
@@ -52,6 +55,10 @@ namespace KotikoBlog.Repository
         /// <value>The mapping assemblies.</value>
         public string[] FluentNhibernateMappingAssemblies { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="config"></param>
         protected override void PostProcessConfiguration(Configuration config)
         {
             if (FluentNhibernateMappingAssemblies != null)

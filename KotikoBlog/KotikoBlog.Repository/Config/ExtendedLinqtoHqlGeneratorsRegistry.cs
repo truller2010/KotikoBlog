@@ -37,8 +37,14 @@ using NHibernate.Linq.Functions;
 
 namespace KotikoBlog.Repository.Config
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class ExtendedLinqtoHqlGeneratorsRegistry : DefaultLinqToHqlGeneratorsRegistry
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public ExtendedLinqtoHqlGeneratorsRegistry()
         {
             this.Merge(new AddDaysGenerator());

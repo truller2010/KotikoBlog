@@ -39,6 +39,9 @@ using KotikoBlog.Repository.Abstract;
 
 namespace KotikoBlog.Repository.BlogTag
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public interface IBlogTagRepository : ISupportsSave<BlogTagModel, int>, IDao<BlogTagModel, int>,
         IQueryableDao<BlogTagModel, int>, ISearchableDao<BlogTagModel, int, SearchFilter>
     {

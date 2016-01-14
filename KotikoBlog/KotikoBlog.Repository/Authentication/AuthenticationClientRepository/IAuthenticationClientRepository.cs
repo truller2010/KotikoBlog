@@ -38,6 +38,9 @@ using KotikoBlog.Repository.Abstract;
 
 namespace KotikoBlog.Repository.Authentication.AuthenticationClientRepository
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public interface IAuthenticationClientRepository : ISupportsSave<AuthenticationClient, string>,
         IDao<AuthenticationClient, string>
     {

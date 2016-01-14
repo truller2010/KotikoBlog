@@ -39,6 +39,9 @@ using KotikoBlog.Repository.Abstract;
 
 namespace KotikoBlog.Repository.BlogCategory
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public interface IBlogCategoryRepository : ISupportsSave<BlogCategoryModel, int>, IDao<BlogCategoryModel, int>,
         IQueryableDao<BlogCategoryModel, int>, ISearchableDao<BlogCategoryModel, int, SearchFilter>
     {

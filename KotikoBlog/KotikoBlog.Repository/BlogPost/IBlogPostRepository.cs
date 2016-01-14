@@ -41,13 +41,45 @@ using KotikoBlog.Repository.Abstract;
 
 namespace KotikoBlog.Repository.BlogPost
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public interface IBlogPostRepository : ISupportsSave<BlogPostModel, int>, IDao<BlogPostModel, int>,
         IQueryableDao<BlogPostModel, int>, ISearchableDao<BlogPostModel, int, SearchFilter>
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         Page<BlogPostModel> PaginatedByTag(FindRequestImpl<SearchFilter> filter);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         Page<BlogPostModel> PaginatedByCategory(FindRequestImpl<SearchFilter> filter);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         Page<BlogPostModel> PaginatedByIdTitle(FindRequestImpl<SearchFilter> filter);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         Page<BlogPostModel> PaginatedByArchives(FindRequestImpl<SearchFilter> filter);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="year"></param>
+        /// <returns></returns>
         BlogArchivesModel GetArchives(int year);
     }
 }

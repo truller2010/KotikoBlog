@@ -40,33 +40,63 @@ using KotikoBlog.Repository.Abstract;
 
 namespace KotikoBlog.Repository.Authentication.AuthenticationClientRepository
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class AuthenticationClientRepository : HibernateDao, IAuthenticationClientRepository
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public string Save(AuthenticationClient entity)
         {
             return (string) CurrentSession.Save(entity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
         public void Save(IList<AuthenticationClient> entity)
         {
             SaveAll(entity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
         public void Update(AuthenticationClient entity)
         {
             CurrentSession.Update(entity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public AuthenticationClient Get(string id)
         {
             return CurrentSession.Get<AuthenticationClient>(id);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public IList<AuthenticationClient> GetAll()
         {
             return GetAll<AuthenticationClient>();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pageRequest"></param>
+        /// <returns></returns>
         public Page<AuthenticationClient> Paginated(PageRequest pageRequest)
         {
             return Paginated<AuthenticationClient>(CurrentSession.QueryOver<AuthenticationClient>(), pageRequest);

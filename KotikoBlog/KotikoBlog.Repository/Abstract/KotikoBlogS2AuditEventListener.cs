@@ -44,20 +44,40 @@ using NHibernate.Event;
 
 namespace KotikoBlog.Repository.Abstract
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class KotikoBlogAuditEventListener : AuditEventListener, IPreUpdateEventListener, IPreInsertEventListener,
         IPreDeleteEventListener, IPreCollectionRecreateEventListener
     {
+        /// <summary>
+        /// 
+        /// </summary>
         private const string MODEL_NAMESPACE = "KotikoBlog.Models";
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="evt"></param>
         public void OnPreRecreateCollection(PreCollectionRecreateEvent evt)
         {
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="evt"></param>
+        /// <returns></returns>
         public bool OnPreDelete(PreDeleteEvent evt)
         {
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="evt"></param>
+        /// <returns></returns>
         public bool OnPreInsert(PreInsertEvent evt)
         {
             var index = Array.IndexOf(evt.Persister.PropertyNames, "FechaAlta");
@@ -89,6 +109,11 @@ namespace KotikoBlog.Repository.Abstract
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="evt"></param>
+        /// <returns></returns>
         public bool OnPreUpdate(PreUpdateEvent evt)
         {
             var index = Array.IndexOf(evt.Persister.PropertyNames, "FechaModificacion");
@@ -111,14 +136,27 @@ namespace KotikoBlog.Repository.Abstract
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="evt"></param>
         public override void OnPreUpdateCollection(PreCollectionUpdateEvent evt)
         {
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="evt"></param>
         public override void OnPreRemoveCollection(PreCollectionRemoveEvent evt)
         {
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="properties"></param>
+        /// <returns></returns>
         private static IEnumerable<PropertyInfo> GetAuditedProperties(PropertyInfo[] properties)
         {
             return properties.Where(x => x.GetCustomAttribute<ParentAuditedAttribute>(false) != null);

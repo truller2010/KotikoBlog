@@ -43,44 +43,82 @@ using KotikoBlog.Repository.Abstract;
 
 namespace KotikoBlog.Repository.BlogTag
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class BlogTagRepository : HibernateDao, IBlogTagRepository
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public BlogTagModel Get(int id)
         {
             return CurrentSession.Get<BlogTagModel>(id);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public IList<BlogTagModel> GetAll()
         {
             return GetAll<BlogTagModel>();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public int Save(BlogTagModel entity)
         {
             return (int) CurrentSession.Save(entity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entities"></param>
         public void Save(IList<BlogTagModel> entities)
         {
             SaveAll(entities);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
         public void Update(BlogTagModel entity)
         {
             CurrentSession.Update(entity);
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         public Page<BlogTagModel> Paginated(FindRequestImpl<SearchFilter> filter)
         {
             throw new NotImplementedException();
         }
-
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pageRequest"></param>
+        /// <returns></returns>
         public Page<BlogTagModel> Paginated(PageRequest pageRequest)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public IQueryable<BlogTagModel> GetAllQueryable()
         {
             throw new NotImplementedException();

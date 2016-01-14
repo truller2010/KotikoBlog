@@ -43,33 +43,64 @@ using NHibernate.Linq;
 
 namespace KotikoBlog.Repository.Authentication.AuthenticationUsersRepository
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class AuthenticationUsersRepository : HibernateDao, IAuthenticationUsersRepository
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public AuthenticationUsers Get(long id)
         {
             return CurrentSession.Get<AuthenticationUsers>(id);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public IList<AuthenticationUsers> GetAll()
         {
             return GetAll<AuthenticationUsers>();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public long Save(AuthenticationUsers entity)
         {
             return (long) CurrentSession.Save(entity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entities"></param>
         public void Save(IList<AuthenticationUsers> entities)
         {
             SaveAll(entities);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
         public void Update(AuthenticationUsers entity)
         {
             CurrentSession.Update(entity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="hashedPassword"></param>
+        /// <returns></returns>
         public AuthenticationUsers GetByUsernameAndPassword(string username, string hashedPassword)
         {
             return CurrentSession.QueryOver<AuthenticationUsers>()
@@ -77,6 +108,13 @@ namespace KotikoBlog.Repository.Authentication.AuthenticationUsersRepository
                 .List().FirstOrDefault();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="CUKotikoBlog"></param>
+        /// <param name="passOld"></param>
+        /// <param name="passNew"></param>
+        /// <returns></returns>
         public bool ActualizarContrasenia(long CUKotikoBlog, string passOld, string passNew)
         {
             var user =
@@ -91,16 +129,30 @@ namespace KotikoBlog.Repository.Authentication.AuthenticationUsersRepository
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pageRequest"></param>
+        /// <returns></returns>
         public Page<AuthenticationUsers> Paginated(PageRequest pageRequest)
         {
             return Paginated<AuthenticationUsers>(CurrentSession.CreateCriteria<AuthenticationUsers>(), pageRequest);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public IQueryable<AuthenticationUsers> GetAllQueryable()
         {
             return CurrentSession.Query<AuthenticationUsers>();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         public Page<AuthenticationUsers> Paginated(FindRequestImpl<SearchFilter> filter)
         {
             AuthenticationUsers u = null;
@@ -108,6 +160,11 @@ namespace KotikoBlog.Repository.Authentication.AuthenticationUsersRepository
             return Paginated(qUsuarios2, filter.PageRequest);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         public AuthenticationUsers GetByEmail(string email)
         {
             return CurrentSession.QueryOver<AuthenticationUsers>()
@@ -115,7 +172,11 @@ namespace KotikoBlog.Repository.Authentication.AuthenticationUsersRepository
                 .List().FirstOrDefault();
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="locked"></param>
+        /// <returns></returns>
         public bool UserHasLockCode(LockCode locked)
         {
             var status = false;

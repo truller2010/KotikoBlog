@@ -38,6 +38,9 @@ using KotikoBlog.Repository.Abstract;
 
 namespace KotikoBlog.Repository.Authentication.AuthenticationRefreshTokenRepository
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public interface IAuthenticationRefreshTokenRepository : ISupportsSave<AuthenticationRefreshToken, string>,
         IDao<AuthenticationRefreshToken, string>, ISupportsDelete<AuthenticationRefreshToken>
     {

@@ -46,44 +46,83 @@ using NHibernate.Linq;
 
 namespace KotikoBlog.Repository.BlogPost
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class BlogPostRepository : HibernateDao, IBlogPostRepository
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public BlogPostModel Get(int id)
         {
             return CurrentSession.Get<BlogPostModel>(id);
         }
 
+        /// <summary>
+        /// /
+        /// </summary>
+        /// <returns></returns>
         public IList<BlogPostModel> GetAll()
         {
             return GetAll<BlogPostModel>();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public int Save(BlogPostModel entity)
         {
             return (int) CurrentSession.Save(entity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entities"></param>
         public void Save(IList<BlogPostModel> entities)
         {
             SaveAll(entities);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
         public void Update(BlogPostModel entity)
         {
             CurrentSession.Update(entity);
         }
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pageRequest"></param>
+        /// <returns></returns>
         public Page<BlogPostModel> Paginated(PageRequest pageRequest)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public IQueryable<BlogPostModel> GetAllQueryable()
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         public Page<BlogPostModel> Paginated(FindRequestImpl<SearchFilter> filter)
         {
             var query = CurrentSession.Query<BlogPostModel>();
@@ -102,6 +141,11 @@ namespace KotikoBlog.Repository.BlogPost
             return Paginated(query, filter.PageRequest);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         public Page<BlogPostModel> PaginatedByTag(FindRequestImpl<SearchFilter> filter)
         {
             var query =
@@ -121,6 +165,11 @@ namespace KotikoBlog.Repository.BlogPost
             return Paginated(query, filter.PageRequest);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         public Page<BlogPostModel> PaginatedByCategory(FindRequestImpl<SearchFilter> filter)
         {
             var query = CurrentSession.Query<BlogPostModel>().Where(x => x.Category.Name == filter.Filter.Category);
@@ -139,6 +188,11 @@ namespace KotikoBlog.Repository.BlogPost
             return Paginated(query, filter.PageRequest);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         public Page<BlogPostModel> PaginatedByIdTitle(FindRequestImpl<SearchFilter> filter)
         {
             var query =
@@ -159,6 +213,11 @@ namespace KotikoBlog.Repository.BlogPost
             return Paginated(query, filter.PageRequest);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         public Page<BlogPostModel> PaginatedByArchives(FindRequestImpl<SearchFilter> filter)
         {
             var year = Convert.ToInt32(filter.Filter.Year);
@@ -180,6 +239,11 @@ namespace KotikoBlog.Repository.BlogPost
             return Paginated(query, filter.PageRequest);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="year"></param>
+        /// <returns></returns>
         public BlogArchivesModel GetArchives(int year)
         {
             var model = new BlogArchivesModel();

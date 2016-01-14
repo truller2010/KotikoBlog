@@ -42,6 +42,9 @@ using Order = NHibernate.Criterion.Order;
 
 namespace KotikoBlog.Repository.Abstract
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public abstract class HibernateDao
     {
         /// <summary>
@@ -58,6 +61,11 @@ namespace KotikoBlog.Repository.Abstract
             get { return SessionFactory.GetCurrentSession(); }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         protected IList<T> GetAll<T>() where T : class
         {
             var criteria = CurrentSession.CreateCriteria<T>();
@@ -66,6 +74,12 @@ namespace KotikoBlog.Repository.Abstract
             return result;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="criteria"></param>
+        /// <returns></returns>
         protected Page<T> GetAll<T>(ICriteria criteria) where T : class
         {
             var result = criteria.List<T>();
@@ -73,6 +87,13 @@ namespace KotikoBlog.Repository.Abstract
             return new Page<T>(result, result.Count, 0, result.Count, new Sort(), result.Count, result.Count);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="criteria"></param>
+        /// <param name="pageRequest"></param>
+        /// <returns></returns>
         protected Page<T> Paginated<T>(ICriteria criteria, PageRequest pageRequest) where T : class
         {
             if (pageRequest.Size > 0)
@@ -107,11 +128,26 @@ namespace KotikoBlog.Repository.Abstract
                 pageRequest.Size);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="queryover"></param>
+        /// <param name="pageRequest"></param>
+        /// <returns></returns>
         protected Page<T> Paginated<T>(IQueryOver queryover, PageRequest pageRequest) where T : class
         {
             return Paginated<T>(queryover.UnderlyingCriteria, pageRequest);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="queryList"></param>
+        /// <param name="queryCount"></param>
+        /// <param name="pageRequest"></param>
+        /// <returns></returns>
         protected Page<T> Paginated<T>(IQuery queryList, IQuery queryCount, PageRequest pageRequest) where T : class
         {
             queryList.SetFirstResult(pageRequest.Offset);
@@ -128,6 +164,13 @@ namespace KotikoBlog.Repository.Abstract
                 pageRequest.Size);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="q"></param>
+        /// <param name="pageRequest"></param>
+        /// <returns></returns>
         protected Page<T> Paginated<T>(IQueryable<T> q, PageRequest pageRequest)
         {
             long totalElements = q.Count();
@@ -140,6 +183,11 @@ namespace KotikoBlog.Repository.Abstract
                 pageRequest.Size);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="entities"></param>
         protected void SaveAll<T>(ICollection<T> entities)
         {
             foreach (var entity in entities)
