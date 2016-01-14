@@ -1,0 +1,117 @@
+/* iPads (portrait and landscape) ----------- */
+@media (max-width: 768px) {
+	body{ overflow-x: hidden;}
+   #tf-menu,
+   #bs-example-navbar-collapse-1{ text-align: center;}
+   .navbar-nav,
+   .navbar-right{ 
+   		float: none !important;
+   		text-align: center;
+   		display: inline-block;
+   }
+   #top-header.layout-two {
+	    margin-top: 100px;
+	}
+    .carousel-control .fa { top: 40% }
+	.sidebar{ margin-top: 60px}
+	.quote a.meta-date{position: relative;}
+
+	/* Layout Two */
+	ul.insta-photos li img { width: 100px }
+}
+
+@media (max-width: 767px) {
+	.navbar-nav,
+   	.navbar-right{ display: block }
+	ul.navbar-right li {
+	  display: inline-block;
+	}
+	.navbar-toggle {
+	    float: none !important;
+	    border: 0;
+	    margin-right: 0;
+	}
+	.navbar-default .navbar-toggle:hover, 
+	.navbar-default .navbar-toggle:focus{ background: transparent;}
+	.navbar-default .navbar-toggle {
+	    color: #FFF;
+	    width: 100%;
+	    text-align: center;
+	    left: 46%;
+	}
+}
+@media (max-width: 603px) { 
+	#top-header.layout-two {
+	    margin-top: 50px;
+	}
+	.carousel-control .fa { top: 35% }
+    a.meta-date{ position: relative }
+    .post-detail h2, 
+    .post-detail h2 a {
+	    left: auto;
+		margin-bottom: 10px;
+		margin-top: 4px;
+	}
+	.layout-one .blog-post a.meta-date,
+	.category a.meta-date {left: 43%;}
+}
+
+@media (max-width: 460px) {
+	.navbar-default .navbar-toggle:hover, 
+	.navbar-default .navbar-toggle:focus{ background: transparent;}
+	.navbar-default .navbar-toggle {left: 45%;}
+	#header-slider .carousel-caption{
+		display: none;
+	}
+	.carousel-control .fa { top: 38% }
+	.youtube .metas a,
+	.vimeo .metas a{ display: none;}
+	.layout-one .blog-post a.meta-date,
+	.category a.meta-date { left: 39%}
+}
+@media (max-width: 360px) { 
+	.carousel-control .fa { top: 43% }
+	.post-detail h2, .post-detail h2 a {
+	    letter-spacing: 0;
+	    font-size: 22px;
+	    line-height: 24px;
+	}
+	.metas a { padding: 2px 15px}
+	.layout-one .blog-post a.meta-date,
+	.category a.meta-date { left: 38%;}
+	.media.reply-comment {margin-left: 0;}
+}
+@media (max-width: 320px) { 
+	.navbar-default .navbar-toggle:hover, 
+	.navbar-default .navbar-toggle:focus{ background: transparent;}
+	.navbar-default .navbar-toggle {left: 43%;}
+	.carousel-control .fa { top: 41% }
+	#top-header .logo { 
+		width: 70%;
+		height: auto;
+	}
+	.post-detail h2, 
+	.post-detail h2 a { 
+		font-size: 22px; 
+		line-height: 20px;
+	}
+	.sidebar ul.social li,
+	ul.social li { 
+		margin: 0; 
+		padding: 0;
+	}
+	.sidebar ul.social li a i,
+	ul.social li a i{ 
+		width: 40px;
+		height: 40px;
+		font-size: 15px;
+	}
+	#tf-footer blockquote, 
+	.post-detail .img-wrap blockquote{ font-size: 16px;}
+	.metas a { display: none;}
+	a.meta-date{
+		width: 60px;
+		height: 60px;
+		padding: 5px
+	}
+}

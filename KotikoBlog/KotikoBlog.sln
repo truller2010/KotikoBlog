@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KotikoBlog.Backend", "KotikoBlog.Backend\KotikoBlog.Backend.csproj", "{613DBA57-502D-4EE7-8415-48221FF604CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KotikoBlog.Models", "KotikoBlog.Models\KotikoBlog.Models.csproj", "{8D73F6D4-2FF7-4639-9EA7-762AD566476A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KotikoBlog.Service", "KotikoBlog.Service\KotikoBlog.Service.csproj", "{0EEDFB86-A90C-4D5B-BBAA-EF86F886F2A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KotikoBlog.Repository", "KotikoBlog.Repository\KotikoBlog.Repository.csproj", "{4568188C-F7CB-4594-B7EA-729DD0E6F3DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KotikoBlog.Core", "KotikoBlog.Core\KotikoBlog.Core.csproj", "{7B4E1715-D803-49AF-BC1D-7CDE14D778BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.- Backend", "1.- Backend", "{1FA175F1-CD87-442F-8979-664DB3EA8452}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.- Frontend", "2.- Frontend", "{AFC819A1-2932-493A-B631-A7F6A656E003}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.- Models", "3.- Models", "{35B5D1BF-4DBF-4375-B7BC-E2ECF8043EB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.- Service", "4.- Service", "{DAE705A0-B9CB-4D01-A3A6-96C28293285D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.- Repository", "5.- Repository", "{64A88F3B-4F06-4391-A9ED-CCFA7A30E4DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6.- Core", "6.- Core", "{CD0C22D4-04A5-45E9-9D72-FB1CC9D7ACE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KotikoBlog.Frontend", "KotikoBlog.Frontend\KotikoBlog.Frontend.csproj", "{A1693EFE-4EEF-499F-B1C2-7968992D3C59}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7.- Utils", "7.- Utils", "{E4E57FC7-3243-4C8D-8B93-19A75DE41FD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kotiko.Utils.PasswordGenerator", "Kotiko.Utils.PasswordGenerator\Kotiko.Utils.PasswordGenerator.csproj", "{D1FD937B-0E6D-45F6-A85F-4141D874E603}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sql Tables", "Sql Tables", "{E213DD58-0810-4256-B5BE-BDF139B0E1CE}"
+	ProjectSection(SolutionItems) = preProject
+		Sql Tables\dbo.Authentication_Client.Table.sql = Sql Tables\dbo.Authentication_Client.Table.sql
+		Sql Tables\dbo.Authentication_RefreshToken.Table.sql = Sql Tables\dbo.Authentication_RefreshToken.Table.sql
+		Sql Tables\dbo.Authentication_Users.Table.sql = Sql Tables\dbo.Authentication_Users.Table.sql
+		Sql Tables\dbo.Authentication_UsersRoles.Table.sql = Sql Tables\dbo.Authentication_UsersRoles.Table.sql
+		Sql Tables\dbo.BlogCategory.Table.sql = Sql Tables\dbo.BlogCategory.Table.sql
+		Sql Tables\dbo.BlogPost.Table.sql = Sql Tables\dbo.BlogPost.Table.sql
+		Sql Tables\dbo.BlogTag.Table.sql = Sql Tables\dbo.BlogTag.Table.sql
+		Sql Tables\dbo.PostTagMap.Table.sql = Sql Tables\dbo.PostTagMap.Table.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{613DBA57-502D-4EE7-8415-48221FF604CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{613DBA57-502D-4EE7-8415-48221FF604CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{613DBA57-502D-4EE7-8415-48221FF604CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{613DBA57-502D-4EE7-8415-48221FF604CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D73F6D4-2FF7-4639-9EA7-762AD566476A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D73F6D4-2FF7-4639-9EA7-762AD566476A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D73F6D4-2FF7-4639-9EA7-762AD566476A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D73F6D4-2FF7-4639-9EA7-762AD566476A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EEDFB86-A90C-4D5B-BBAA-EF86F886F2A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EEDFB86-A90C-4D5B-BBAA-EF86F886F2A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EEDFB86-A90C-4D5B-BBAA-EF86F886F2A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EEDFB86-A90C-4D5B-BBAA-EF86F886F2A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4568188C-F7CB-4594-B7EA-729DD0E6F3DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4568188C-F7CB-4594-B7EA-729DD0E6F3DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4568188C-F7CB-4594-B7EA-729DD0E6F3DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4568188C-F7CB-4594-B7EA-729DD0E6F3DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B4E1715-D803-49AF-BC1D-7CDE14D778BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B4E1715-D803-49AF-BC1D-7CDE14D778BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B4E1715-D803-49AF-BC1D-7CDE14D778BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B4E1715-D803-49AF-BC1D-7CDE14D778BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1693EFE-4EEF-499F-B1C2-7968992D3C59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1693EFE-4EEF-499F-B1C2-7968992D3C59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1693EFE-4EEF-499F-B1C2-7968992D3C59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1693EFE-4EEF-499F-B1C2-7968992D3C59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1FD937B-0E6D-45F6-A85F-4141D874E603}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1FD937B-0E6D-45F6-A85F-4141D874E603}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1FD937B-0E6D-45F6-A85F-4141D874E603}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1FD937B-0E6D-45F6-A85F-4141D874E603}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{613DBA57-502D-4EE7-8415-48221FF604CE} = {1FA175F1-CD87-442F-8979-664DB3EA8452}
+		{8D73F6D4-2FF7-4639-9EA7-762AD566476A} = {35B5D1BF-4DBF-4375-B7BC-E2ECF8043EB5}
+		{0EEDFB86-A90C-4D5B-BBAA-EF86F886F2A6} = {DAE705A0-B9CB-4D01-A3A6-96C28293285D}
+		{4568188C-F7CB-4594-B7EA-729DD0E6F3DE} = {64A88F3B-4F06-4391-A9ED-CCFA7A30E4DE}
+		{7B4E1715-D803-49AF-BC1D-7CDE14D778BA} = {CD0C22D4-04A5-45E9-9D72-FB1CC9D7ACE4}
+		{A1693EFE-4EEF-499F-B1C2-7968992D3C59} = {AFC819A1-2932-493A-B631-A7F6A656E003}
+		{D1FD937B-0E6D-45F6-A85F-4141D874E603} = {E4E57FC7-3243-4C8D-8B93-19A75DE41FD2}
+		{E213DD58-0810-4256-B5BE-BDF139B0E1CE} = {E4E57FC7-3243-4C8D-8B93-19A75DE41FD2}
+	EndGlobalSection
+EndGlobal
