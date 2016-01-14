@@ -40,10 +40,18 @@ using System.Web.Http.Filters;
 
 namespace KotikoBlog.Backend.Filters
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class ValidateModelAttribute : ActionFilterAttribute
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="actionContext"></param>
         public override void OnActionExecuting(HttpActionContext actionContext)
         {
+            
             if (actionContext.ModelState.IsValid == false)
             {
                 actionContext.Response = actionContext.Request.CreateErrorResponse(HttpStatusCode.BadRequest,

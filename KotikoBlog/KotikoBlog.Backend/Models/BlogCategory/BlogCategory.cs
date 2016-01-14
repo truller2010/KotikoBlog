@@ -39,6 +39,9 @@ using Newtonsoft.Json;
 
 namespace KotikoBlog.Backend.Models.BlogCategory
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class BlogCategoryResponse
     {
         public virtual int Id { get; set; }

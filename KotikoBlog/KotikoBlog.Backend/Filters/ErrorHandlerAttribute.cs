@@ -46,8 +46,13 @@ namespace KotikoBlog.Backend.Filters
     /// </summary>
     public class ErrorHandlerAttribute : ActionFilterAttribute, IExceptionFilter
     {
-        public Task ExecuteExceptionFilterAsync(HttpActionExecutedContext actionExecutedContext,
-            CancellationToken cancellationToken)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="actionExecutedContext"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public Task ExecuteExceptionFilterAsync(HttpActionExecutedContext actionExecutedContext, CancellationToken cancellationToken)
         {
             return Task.Factory.StartNew(() =>
             {

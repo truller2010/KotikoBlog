@@ -54,9 +54,15 @@ namespace KotikoBlog.Backend.Controllers.BlogPost
     //[Authorize]
     public class BlogPostController : ApiController
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public IBlogPostService BlogPostService { get; set; }
 
-        //GET /api/Laboratorios/GetAll
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IHttpActionResult GetAll()
         {
@@ -70,7 +76,11 @@ namespace KotikoBlog.Backend.Controllers.BlogPost
             }
         }
 
-        //GET /api/Laboratorios/Get/{id}
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         public IHttpActionResult Get(int id)
         {
@@ -89,7 +99,11 @@ namespace KotikoBlog.Backend.Controllers.BlogPost
             }
         }
 
-        //POST /api/Laboratorios/Save
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         [HttpPost]
         public IHttpActionResult Save(BlogPostModel item)
         {
@@ -120,6 +134,11 @@ namespace KotikoBlog.Backend.Controllers.BlogPost
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         [HttpPost]
         public IHttpActionResult Find(FindRequestImpl<SearchFilter> filter)
         {
@@ -136,6 +155,11 @@ namespace KotikoBlog.Backend.Controllers.BlogPost
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         [HttpPost]
         public IHttpActionResult FindByTag(FindRequestImpl<SearchFilter> filter)
         {
@@ -153,6 +177,11 @@ namespace KotikoBlog.Backend.Controllers.BlogPost
         }
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         [HttpPost]
         public IHttpActionResult FindByCategory(FindRequestImpl<SearchFilter> filter)
         {
@@ -169,6 +198,11 @@ namespace KotikoBlog.Backend.Controllers.BlogPost
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         [HttpPost]
         public IHttpActionResult FindByIdTitle(FindRequestImpl<SearchFilter> filter)
         {
@@ -185,6 +219,11 @@ namespace KotikoBlog.Backend.Controllers.BlogPost
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         [HttpPost]
         public IHttpActionResult FindByArchives(FindRequestImpl<SearchFilter> filter)
         {
@@ -201,6 +240,10 @@ namespace KotikoBlog.Backend.Controllers.BlogPost
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IHttpActionResult GetArchives()
         {

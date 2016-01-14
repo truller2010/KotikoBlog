@@ -37,11 +37,17 @@ using System.Collections.Generic;
 
 namespace KotikoBlog.Backend.Models.BlogArchives
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class BlogArchivesResponse
     {
         public virtual IList<ArchiveResponse> Archives { get; set; }
     }
-
+    
+    /// <summary>
+    /// 
+    /// </summary>
     public class ArchiveResponse
     {
         public virtual string year { get; set; }

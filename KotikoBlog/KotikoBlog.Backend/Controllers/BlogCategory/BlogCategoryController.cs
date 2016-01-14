@@ -53,9 +53,15 @@ namespace KotikoBlog.Backend.Controllers.BlogCategory
     //[Authorize]
     public class BlogCategoryController : ApiController
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public IBlogCategoryService BlogCategoryService { get; set; }
 
-        //GET /api/Laboratorios/GetAll
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IHttpActionResult GetAll()
         {
@@ -69,7 +75,11 @@ namespace KotikoBlog.Backend.Controllers.BlogCategory
             }
         }
 
-        //GET /api/Laboratorios/Get/{id}
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         public IHttpActionResult Get(int id)
         {
@@ -88,7 +98,11 @@ namespace KotikoBlog.Backend.Controllers.BlogCategory
             }
         }
 
-        //POST /api/Laboratorios/Save
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         [HttpPost]
         public IHttpActionResult Save(BlogCategoryModel item)
         {
@@ -119,6 +133,11 @@ namespace KotikoBlog.Backend.Controllers.BlogCategory
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         [HttpPost]
         public IHttpActionResult Find(FindRequestImpl<SearchFilter> filter)
         {

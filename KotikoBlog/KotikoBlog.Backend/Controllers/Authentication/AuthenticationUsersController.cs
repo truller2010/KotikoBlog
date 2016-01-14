@@ -45,10 +45,20 @@ using KotikoBlog.Service.Authentication.AuthenticationUsersService;
 
 namespace KotikoBlog.Backend.Controllers.Authentication
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class AuthenticationUsersController : BaseApiController
     {
+        /// <summary>
+        /// 
+        /// </summary>
         private IAuthenticationUsersService AuthenticationUsersService { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [AllowAnonymous]
         public IHttpActionResult Throw()
@@ -56,6 +66,11 @@ namespace KotikoBlog.Backend.Controllers.Authentication
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         public IHttpActionResult Get(long id)
         {
@@ -64,6 +79,10 @@ namespace KotikoBlog.Backend.Controllers.Authentication
             return Ok(Mapper.Map<AuthenticationUsersResponse>(user));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<AuthenticationUsers> GetAll()
         {
@@ -72,6 +91,11 @@ namespace KotikoBlog.Backend.Controllers.Authentication
             return Mapper.Map<IEnumerable<AuthenticationUsers>>(users);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         [HttpGet]
         public AuthenticationUsersResponse GetByEmail(string email)
         {
@@ -80,6 +104,12 @@ namespace KotikoBlog.Backend.Controllers.Authentication
             return Mapper.Map<AuthenticationUsersResponse>(user);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         [HttpGet]
         public AuthenticationUsersResponse GetByEmail(string email, string password)
         {
@@ -88,6 +118,11 @@ namespace KotikoBlog.Backend.Controllers.Authentication
             return Mapper.Map<AuthenticationUsersResponse>(user);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         [HttpPost]
         public AuthenticationUsersResponse Save(AuthenticationUsers entity)
         {
@@ -96,6 +131,11 @@ namespace KotikoBlog.Backend.Controllers.Authentication
             return Mapper.Map<AuthenticationUsersResponse>(entity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         [HttpPost]
         public IHttpActionResult Update(AuthenticationUsers entity)
         {
@@ -104,6 +144,11 @@ namespace KotikoBlog.Backend.Controllers.Authentication
             return Ok(Mapper.Map<AuthenticationUsersResponse>(entity));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         [HttpPost]
         public Page<AuthenticationUsersResponse> Find(FindRequestImpl<SearchFilter> filter)
         {
@@ -112,12 +157,15 @@ namespace KotikoBlog.Backend.Controllers.Authentication
             return Mapper.Map<Page<AuthenticationUsersResponse>>(users);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="locked"></param>
+        /// <returns></returns>
         [HttpPost]
         public bool checkLockCode(LockCode locked)
         {
             return AuthenticationUsersService.UserHasLockCode(locked);
         }
-
-        //AuthenticationUsersService.Paginated
     }
 }

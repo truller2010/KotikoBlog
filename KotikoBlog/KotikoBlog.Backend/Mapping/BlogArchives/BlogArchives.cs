@@ -40,8 +40,14 @@ using KotikoBlog.Models.BlogArchives;
 
 namespace KotikoBlog.Backend.Mapping.BlogArchives
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class BlogArchivesProfile : Profile
     {
+        /// <summary>
+        /// 
+        /// </summary>
         protected override void Configure()
         {
             Mapper.CreateMap<BlogArchivesModel, BlogArchivesResponse>();

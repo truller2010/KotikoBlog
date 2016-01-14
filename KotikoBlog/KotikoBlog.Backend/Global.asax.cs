@@ -41,8 +41,14 @@ using Spring.Web.Mvc;
 
 namespace KotikoBlog.Backend
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class WebApiApplication : SpringMvcApplication
     {
+        /// <summary>
+        /// 
+        /// </summary>
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();

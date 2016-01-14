@@ -39,18 +39,43 @@ using System.Linq.Expressions;
 
 namespace KotikoBlog.Backend.Common
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class QueryableExtensions
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="property"></param>
+        /// <returns></returns>
         public static IOrderedQueryable<T> OrderBy<T>(this IQueryable<T> source, string property)
         {
             return ApplyOrder(source, property, "OrderBy");
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="property"></param>
+        /// <returns></returns>
         public static IOrderedQueryable<T> OrderByDescending<T>(this IQueryable<T> source, string property)
         {
             return ApplyOrder(source, property, "OrderByDescending");
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="property"></param>
+        /// <param name="methodName"></param>
+        /// <returns></returns>
         private static IOrderedQueryable<T> ApplyOrder<T>(IQueryable<T> source, string property, string methodName)
         {
             var props = property.Split('.');

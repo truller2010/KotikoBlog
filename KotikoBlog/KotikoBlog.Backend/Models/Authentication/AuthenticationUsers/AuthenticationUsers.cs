@@ -39,6 +39,9 @@ using KotikoBlog.Models.Authentication.AuthenticationRoles;
 
 namespace KotikoBlog.Backend.Models.Authentication.AuthenticationUsers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class AuthenticationUsersResponse
     {
         public virtual int Id { get; set; }

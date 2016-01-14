@@ -49,18 +49,32 @@ using Spring.Context.Support;
 
 namespace KotikoBlog.Backend.Providers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class SimpleAuthorizationServerProvider : OAuthAuthorizationServerProvider
     {
+        /// <summary>
+        /// 
+        /// </summary>
         private IAuthenticationUsersService AuthenticationUsersService
         {
             get { return ContextRegistry.GetContext().GetObject<IAuthenticationUsersService>(); }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private IAuthenticationClientService AuthenticationClientService
         {
             get { return ContextRegistry.GetContext().GetObject<IAuthenticationClientService>(); }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
             var clientId = string.Empty;
@@ -114,6 +128,11 @@ namespace KotikoBlog.Backend.Providers
             return Task.FromResult<object>(null);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
             var allowedOrigin = context.OwinContext.Get<string>("as:clientAllowedOrigin");
@@ -169,6 +188,11 @@ namespace KotikoBlog.Backend.Providers
             context.Validated(ticket);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override Task GrantRefreshToken(OAuthGrantRefreshTokenContext context)
         {
             var originalClient = context.Ticket.Properties.Dictionary["as:client_id"];
@@ -188,6 +212,11 @@ namespace KotikoBlog.Backend.Providers
             return Task.FromResult<object>(null);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override Task TokenEndpoint(OAuthTokenEndpointContext context)
         {
             foreach (var property in context.Properties.Dictionary)

@@ -53,9 +53,15 @@ namespace KotikoBlog.Backend.Controllers.BlogTag
     //[Authorize]
     public class BlogTagController : ApiController
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public IBlogTagService BlogTagService { get; set; }
 
-        //GET /api/Laboratorios/GetAll
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IHttpActionResult GetAll()
         {
@@ -69,7 +75,11 @@ namespace KotikoBlog.Backend.Controllers.BlogTag
             }
         }
 
-        //GET /api/Laboratorios/Get/{id}
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         public IHttpActionResult Get(int id)
         {
@@ -88,7 +98,11 @@ namespace KotikoBlog.Backend.Controllers.BlogTag
             }
         }
 
-        //POST /api/Laboratorios/Save
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         [HttpPost]
         public IHttpActionResult Save(BlogTagModel item)
         {
@@ -119,6 +133,11 @@ namespace KotikoBlog.Backend.Controllers.BlogTag
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         [HttpPost]
         public IHttpActionResult Find(FindRequestImpl<SearchFilter> filter)
         {

@@ -43,8 +43,15 @@ using Owin;
 
 namespace KotikoBlog.Backend
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class Startup
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="app"></param>
         public void Configuration(IAppBuilder app)
         {
             app.UseCors(CorsOptions.AllowAll);

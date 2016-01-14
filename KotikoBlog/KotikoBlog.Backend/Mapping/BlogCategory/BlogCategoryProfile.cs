@@ -40,8 +40,14 @@ using KotikoBlog.Models.BlogCategory;
 
 namespace KotikoBlog.Backend.Mapping.BlogCategory
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class BlogCategoryProfile : Profile
     {
+        /// <summary>
+        /// 
+        /// </summary>
         protected override void Configure()
         {
             Mapper.CreateMap<BlogCategoryModel, BlogCategoryResponse>();

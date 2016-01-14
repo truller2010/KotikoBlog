@@ -40,8 +40,14 @@ using KotikoBlog.Models.Authentication.AuthenticationUsers;
 
 namespace KotikoBlog.Backend.Mapping.Authentication
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class AuthenticationUsersProfile : Profile
     {
+        /// <summary>
+        /// 
+        /// </summary>
         protected override void Configure()
         {
             Mapper.CreateMap<AuthenticationUsers, AuthenticationUsersResponse>();

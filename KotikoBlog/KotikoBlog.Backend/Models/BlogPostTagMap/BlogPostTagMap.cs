@@ -38,6 +38,9 @@ using KotikoBlog.Backend.Models.BlogTag;
 
 namespace KotikoBlog.Backend.Models.BlogPostTagMap
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class BlogPostTagMapResponse
     {
         public virtual int Post_id { get; set; }

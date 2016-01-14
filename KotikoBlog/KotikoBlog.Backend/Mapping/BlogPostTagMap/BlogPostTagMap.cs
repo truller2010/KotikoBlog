@@ -40,8 +40,14 @@ using KotikoBlog.Models.BlogPostTagMap;
 
 namespace KotikoBlog.Backend.Mapping.BlogPostTagMap
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class BlogPostTagMapProfile : Profile
     {
+        /// <summary>
+        /// 
+        /// </summary>
         protected override void Configure()
         {
             Mapper.CreateMap<BlogPostTagMapModel, BlogPostTagMapResponse>();

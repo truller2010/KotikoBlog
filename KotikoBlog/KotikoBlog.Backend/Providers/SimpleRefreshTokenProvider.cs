@@ -45,21 +45,38 @@ namespace KotikoBlog.Backend.Providers
 {
     public class SimpleRefreshTokenProvider : IAuthenticationTokenProvider
     {
+        /// <summary>
+        /// 
+        /// </summary>
         private IAuthenticationRefreshTokenService AuthenticationRefreshTokenService
         {
             get { return ContextRegistry.GetContext().GetObject<IAuthenticationRefreshTokenService>(); }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public async Task CreateAsync(AuthenticationTokenCreateContext context)
         {
             Create(context);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public async Task ReceiveAsync(AuthenticationTokenReceiveContext context)
         {
             Receive(context);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
         public void Create(AuthenticationTokenCreateContext context)
         {
             var clientid = context.Ticket.Properties.Dictionary["as:client_id"];
@@ -92,6 +109,10 @@ namespace KotikoBlog.Backend.Providers
             context.SetToken(refreshTokenId);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
         public void Receive(AuthenticationTokenReceiveContext context)
         {
             var allowedOrigin = context.OwinContext.Get<string>("as:clientAllowedOrigin");
