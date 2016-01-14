@@ -42,22 +42,42 @@ using Spring.Transaction.Interceptor;
 
 namespace KotikoBlog.Service.Authentication.AuthenticationUsersService
 {
+    /// <summary>
+    /// 
+    /// </summary>
     internal class AuthenticationUsersService : IAuthenticationUsersService
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public IAuthenticationUsersRepository AuthenticationUsersRepository { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [Transaction(ReadOnly = true)]
         public AuthenticationUsers Get(long id)
         {
             return AuthenticationUsersRepository.Get(id);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [Transaction(ReadOnly = true)]
         public ICollection<AuthenticationUsers> GetAll()
         {
             return AuthenticationUsersRepository.GetAll();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         [Transaction]
         public long Save(AuthenticationUsers entity)
         {
@@ -66,36 +86,68 @@ namespace KotikoBlog.Service.Authentication.AuthenticationUsersService
             return id;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
         [Transaction]
         public void Update(AuthenticationUsers entity)
         {
             AuthenticationUsersRepository.Update(entity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         [Transaction(ReadOnly = true)]
         public Page<AuthenticationUsers> Paginated(FindRequestImpl<SearchFilter> filter)
         {
             return AuthenticationUsersRepository.Paginated(filter);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="hashedPassword"></param>
+        /// <returns></returns>
         [Transaction(ReadOnly = true)]
         public AuthenticationUsers GetByUsernameAndPassword(string username, string hashedPassword)
         {
             return AuthenticationUsersRepository.GetByUsernameAndPassword(username, hashedPassword);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         [Transaction(ReadOnly = true)]
         public AuthenticationUsers GetByEmail(string email)
         {
             return AuthenticationUsersRepository.GetByEmail(email);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="passOld"></param>
+        /// <param name="passNew"></param>
+        /// <returns></returns>
         [Transaction]
         public bool ActualizarContrasenia(long id, string passOld, string passNew)
         {
             return AuthenticationUsersRepository.ActualizarContrasenia(id, passOld, passNew);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="locked"></param>
+        /// <returns></returns>
         [Transaction(ReadOnly = true)]
         public bool UserHasLockCode(LockCode locked)
         {

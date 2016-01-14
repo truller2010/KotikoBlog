@@ -41,44 +41,81 @@ using Spring.Transaction.Interceptor;
 
 namespace KotikoBlog.Service.Authentication.AuthenticationRefreshTokenService
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Transaction(ReadOnly = true)]
     public class AuthenticationRefreshTokenService : IAuthenticationRefreshTokenService
     {
+        /// <summary>
+        /// 
+        /// </summary>
         private IAuthenticationRefreshTokenRepository AuthenticationRefreshTokenRepository;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         [Transaction(ReadOnly = false)]
         public string Save(AuthenticationRefreshToken entity)
         {
             return AuthenticationRefreshTokenRepository.Save(entity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
         [Transaction(ReadOnly = false)]
         public void Save(IList<AuthenticationRefreshToken> entity)
         {
             AuthenticationRefreshTokenRepository.Save(entity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
         [Transaction(ReadOnly = false)]
         public void Update(AuthenticationRefreshToken entity)
         {
             AuthenticationRefreshTokenRepository.Update(entity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public AuthenticationRefreshToken Get(string id)
         {
             return AuthenticationRefreshTokenRepository.Get(id);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public IList<AuthenticationRefreshToken> GetAll()
         {
             return AuthenticationRefreshTokenRepository.GetAll();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pageRequest"></param>
+        /// <returns></returns>
         public Page<AuthenticationRefreshToken> Paginated(PageRequest pageRequest)
         {
             return AuthenticationRefreshTokenRepository.Paginated(pageRequest);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
         [Transaction(ReadOnly = false)]
         public void Delete(AuthenticationRefreshToken entity)
         {

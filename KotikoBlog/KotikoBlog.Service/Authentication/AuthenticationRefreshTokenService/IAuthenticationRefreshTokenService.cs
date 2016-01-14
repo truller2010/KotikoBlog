@@ -80,6 +80,10 @@ namespace KotikoBlog.Service.Authentication.AuthenticationRefreshTokenService
         /// <param name="entity">to be updated</param>
         void Update(AuthenticationRefreshToken entity);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
         void Delete(AuthenticationRefreshToken entity);
     }
 }

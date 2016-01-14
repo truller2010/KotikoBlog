@@ -40,18 +40,49 @@ using KotikoBlog.Models.BlogTag;
 
 namespace KotikoBlog.Service.BlogTag
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public interface IBlogTagService
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         BlogTagModel Get(int id);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         ICollection<BlogTagModel> GetAll();
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         int SaveOrUpdate(BlogTagModel entity);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         int Save(BlogTagModel entity);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
         void Update(BlogTagModel entity);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         Page<BlogTagModel> Paginated(FindRequestImpl<SearchFilter> filter);
     }
 }

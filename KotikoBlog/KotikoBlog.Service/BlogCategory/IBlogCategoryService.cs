@@ -40,18 +40,49 @@ using KotikoBlog.Models.BlogCategory;
 
 namespace KotikoBlog.Service.BlogCategory
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public interface IBlogCategoryService
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         BlogCategoryModel Get(int id);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         ICollection<BlogCategoryModel> GetAll();
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         int SaveOrUpdate(BlogCategoryModel entity);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         int Save(BlogCategoryModel entity);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
         void Update(BlogCategoryModel entity);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         Page<BlogCategoryModel> Paginated(FindRequestImpl<SearchFilter> filter);
     }
 }

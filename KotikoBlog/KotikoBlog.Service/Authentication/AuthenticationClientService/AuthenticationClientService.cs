@@ -41,39 +41,72 @@ using Spring.Transaction.Interceptor;
 
 namespace KotikoBlog.Service.Authentication.AuthenticationClientService
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Transaction(ReadOnly = true)]
     public class AuthenticationClientService : IAuthenticationClientService
     {
+        /// <summary>
+        /// 
+        /// </summary>
         private IAuthenticationClientRepository AuthenticationClientRepository;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         [Transaction(ReadOnly = false)]
         public string Save(AuthenticationClient entity)
         {
             return AuthenticationClientRepository.Save(entity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
         [Transaction(ReadOnly = false)]
         public void Save(IList<AuthenticationClient> entity)
         {
             AuthenticationClientRepository.Save(entity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
         [Transaction(ReadOnly = false)]
         public void Update(AuthenticationClient entity)
         {
             AuthenticationClientRepository.Update(entity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public AuthenticationClient Get(string id)
         {
             return AuthenticationClientRepository.Get(id);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public IList<AuthenticationClient> GetAll()
         {
             return AuthenticationClientRepository.GetAll();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pageRequest"></param>
+        /// <returns></returns>
         public Page<AuthenticationClient> Paginated(PageRequest pageRequest)
         {
             return AuthenticationClientRepository.Paginated(pageRequest);

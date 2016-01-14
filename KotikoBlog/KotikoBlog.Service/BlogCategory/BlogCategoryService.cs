@@ -43,22 +43,42 @@ using Spring.Transaction.Interceptor;
 
 namespace KotikoBlog.Service.BlogCategory
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class BlogCategoryService : IBlogCategoryService
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public IBlogCategoryRepository BlogCategoryRepository { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [Transaction(ReadOnly = true)]
         public BlogCategoryModel Get(int id)
         {
             return BlogCategoryRepository.Get(id);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [Transaction(ReadOnly = true)]
         public ICollection<BlogCategoryModel> GetAll()
         {
             return BlogCategoryRepository.GetAll();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         [Transaction(ReadOnly = true)]
         public Page<BlogCategoryModel> Paginated(FindRequestImpl<SearchFilter> filter)
         {
@@ -66,6 +86,11 @@ namespace KotikoBlog.Service.BlogCategory
         }
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         [Transaction]
         public int SaveOrUpdate(BlogCategoryModel entity)
         {
@@ -83,12 +108,21 @@ namespace KotikoBlog.Service.BlogCategory
             return BlogCategoryRepository.Save(entity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         [Transaction]
         public int Save(BlogCategoryModel entity)
         {
             return BlogCategoryRepository.Save(entity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
         [Transaction]
         public void Update(BlogCategoryModel entity)
         {

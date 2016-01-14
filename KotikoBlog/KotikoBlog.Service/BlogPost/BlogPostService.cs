@@ -44,23 +44,42 @@ using Spring.Transaction.Interceptor;
 
 namespace KotikoBlog.Service.BlogPost
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class BlogPostService : IBlogPostService
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public IBlogPostRepository BlogPostRepository { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [Transaction(ReadOnly = true)]
         public BlogPostModel Get(int id)
         {
             return BlogPostRepository.Get(id);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [Transaction(ReadOnly = true)]
         public ICollection<BlogPostModel> GetAll()
         {
             return BlogPostRepository.GetAll();
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         [Transaction]
         public int SaveOrUpdate(BlogPostModel entity)
         {
@@ -77,49 +96,88 @@ namespace KotikoBlog.Service.BlogPost
             }
             return BlogPostRepository.Save(entity);
         }
-
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         [Transaction]
         public int Save(BlogPostModel entity)
         {
             return BlogPostRepository.Save(entity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
         [Transaction]
         public void Update(BlogPostModel entity)
         {
             BlogPostRepository.Update(entity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         [Transaction(ReadOnly = true)]
         public Page<BlogPostModel> Paginated(FindRequestImpl<SearchFilter> filter)
         {
             return BlogPostRepository.Paginated(filter);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         [Transaction(ReadOnly = true)]
         public Page<BlogPostModel> PaginatedByTag(FindRequestImpl<SearchFilter> filter)
         {
             return BlogPostRepository.PaginatedByTag(filter);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         [Transaction(ReadOnly = true)]
         public Page<BlogPostModel> PaginatedByCategory(FindRequestImpl<SearchFilter> filter)
         {
             return BlogPostRepository.PaginatedByCategory(filter);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         [Transaction(ReadOnly = true)]
         public Page<BlogPostModel> PaginatedByIdTitle(FindRequestImpl<SearchFilter> filter)
         {
             return BlogPostRepository.PaginatedByIdTitle(filter);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         [Transaction(ReadOnly = true)]
         public Page<BlogPostModel> PaginatedByArchives(FindRequestImpl<SearchFilter> filter)
         {
             return BlogPostRepository.PaginatedByArchives(filter);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="year"></param>
+        /// <returns></returns>
         [Transaction(ReadOnly = true)]
         public BlogArchivesModel GetArchives(int year)
         {

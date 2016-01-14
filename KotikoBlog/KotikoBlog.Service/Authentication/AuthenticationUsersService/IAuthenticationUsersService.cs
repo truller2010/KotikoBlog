@@ -40,24 +40,73 @@ using KotikoBlog.Models.Authentication.AuthenticationUsers;
 
 namespace KotikoBlog.Service.Authentication.AuthenticationUsersService
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public interface IAuthenticationUsersService
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         AuthenticationUsers Get(long id);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         ICollection<AuthenticationUsers> GetAll();
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         long Save(AuthenticationUsers entity);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
         void Update(AuthenticationUsers entity);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         Page<AuthenticationUsers> Paginated(FindRequestImpl<SearchFilter> filter);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="hashedPassword"></param>
+        /// <returns></returns>
         AuthenticationUsers GetByUsernameAndPassword(string username, string hashedPassword);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         AuthenticationUsers GetByEmail(string email);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="CUSNIRH"></param>
+        /// <param name="passOld"></param>
+        /// <param name="passNew"></param>
+        /// <returns></returns>
         bool ActualizarContrasenia(long CUSNIRH, string passOld, string passNew);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="locked"></param>
+        /// <returns></returns>
         bool UserHasLockCode(LockCode locked);
     }
 }

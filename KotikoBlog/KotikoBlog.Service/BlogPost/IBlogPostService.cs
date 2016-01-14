@@ -41,23 +41,84 @@ using KotikoBlog.Models.BlogPost;
 
 namespace KotikoBlog.Service.BlogPost
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public interface IBlogPostService
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         BlogPostModel Get(int id);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         ICollection<BlogPostModel> GetAll();
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         int SaveOrUpdate(BlogPostModel entity);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         int Save(BlogPostModel entity);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
         void Update(BlogPostModel entity);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         Page<BlogPostModel> Paginated(FindRequestImpl<SearchFilter> filter);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         Page<BlogPostModel> PaginatedByTag(FindRequestImpl<SearchFilter> filter);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         Page<BlogPostModel> PaginatedByCategory(FindRequestImpl<SearchFilter> filter);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         Page<BlogPostModel> PaginatedByIdTitle(FindRequestImpl<SearchFilter> filter);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         Page<BlogPostModel> PaginatedByArchives(FindRequestImpl<SearchFilter> filter);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="year"></param>
+        /// <returns></returns>
         BlogArchivesModel GetArchives(int year);
     }
 }

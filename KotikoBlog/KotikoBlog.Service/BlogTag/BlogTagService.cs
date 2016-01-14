@@ -43,29 +43,53 @@ using Spring.Transaction.Interceptor;
 
 namespace KotikoBlog.Service.BlogTag
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class BlogTagService : IBlogTagService
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public IBlogTagRepository BlogTagRepository { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [Transaction(ReadOnly = true)]
         public BlogTagModel Get(int id)
         {
             return BlogTagRepository.Get(id);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [Transaction(ReadOnly = true)]
         public ICollection<BlogTagModel> GetAll()
         {
             return BlogTagRepository.GetAll();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         [Transaction(ReadOnly = true)]
         public Page<BlogTagModel> Paginated(FindRequestImpl<SearchFilter> filter)
         {
             return BlogTagRepository.Paginated(filter);
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         [Transaction]
         public int SaveOrUpdate(BlogTagModel entity)
         {
@@ -83,12 +107,21 @@ namespace KotikoBlog.Service.BlogTag
             return BlogTagRepository.Save(entity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         [Transaction]
         public int Save(BlogTagModel entity)
         {
             return BlogTagRepository.Save(entity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
         [Transaction]
         public void Update(BlogTagModel entity)
         {
