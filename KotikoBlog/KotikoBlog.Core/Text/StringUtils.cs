@@ -40,19 +40,39 @@ using System.Text.RegularExpressions;
 
 namespace KotikoBlog.Core.Text
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class StringUtils
     {
+        /// <summary>
+        /// 
+        /// </summary>
         private StringUtils()
         {
             // non instanceable
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
         public static string NormalizeString(string str)
         {
             var nfdNormalizedString = str.Normalize(NormalizationForm.FormD);
             return new string(nfdNormalizedString.Where(c => char.IsLetterOrDigit(c)).ToArray());
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="length"></param>
+        /// <param name="str1"></param>
+        /// <param name="str2"></param>
+        /// <param name="str3"></param>
+        /// <param name="str4"></param>
+        /// <returns></returns>
         public static string ConcatByHyphen(int length, string str1, string str2, string str3, string str4)
         {
             return
@@ -71,6 +91,11 @@ namespace KotikoBlog.Core.Text
                         : string.Concat("-", str4.Length < length ? str4 : str4.Substring(0, length)));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
         public static string UppercaseFirst(string s)
         {
             if (string.IsNullOrEmpty(s))
@@ -80,11 +105,21 @@ namespace KotikoBlog.Core.Text
             return char.ToUpper(s[0]) + s.Substring(1);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
         public static string Capitalize(string s)
         {
             return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(s.ToLower());
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputEmail"></param>
+        /// <returns></returns>
         public static bool isValidEmail(string inputEmail)
         {
             var strRegex = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +

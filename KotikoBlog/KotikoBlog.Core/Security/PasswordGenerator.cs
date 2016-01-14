@@ -37,10 +37,22 @@ using System;
 
 namespace KotikoBlog.Core.Security
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class PassGenerator
     {
+        /// <summary>
+        /// 
+        /// </summary>
         private static readonly Random Random = new Random();
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="passwordLength"></param>
+        /// <param name="strongPassword"></param>
+        /// <returns></returns>
         public static string PasswordGenerator(int passwordLength, bool strongPassword)
         {
             var seed = Random.Next(1, int.MaxValue);

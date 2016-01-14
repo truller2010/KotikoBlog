@@ -39,8 +39,16 @@ using System.Text;
 
 namespace KotikoBlog.Core.Helper
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class HelperMethods
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public static string GetHash(string input)
         {
             HashAlgorithm hashAlgorithm = new SHA256CryptoServiceProvider();

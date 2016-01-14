@@ -98,12 +98,24 @@ namespace KotikoBlog.Core.Pager
             Sort = sort;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public int Page { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public int Size { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public Sort Sort { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public int Offset
         {
             get { return Page*Size; }
@@ -119,6 +131,10 @@ namespace KotikoBlog.Core.Pager
             return new PageRequest(Page + 1, Size, Sort);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public bool HasPrevious()
         {
             return Page > 0;

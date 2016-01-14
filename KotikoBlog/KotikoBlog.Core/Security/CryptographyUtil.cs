@@ -38,6 +38,9 @@ using SHA3;
 
 namespace KotikoBlog.Core.Security
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class CryptographyUtil
     {
         /// <summary>

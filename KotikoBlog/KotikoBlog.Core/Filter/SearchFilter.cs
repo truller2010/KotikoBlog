@@ -31,15 +31,44 @@
 
 namespace KotikoBlog.Core.Filter
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class SearchFilter
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public string Texto { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public string Category { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public string Tag { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public string Title { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public int ID { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public string Month { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public string Year { get; set; }
     }
 }

@@ -37,18 +37,36 @@ using System;
 
 namespace KotikoBlog.Core.Helper
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class StringValueAttribute : Attribute
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
         public StringValueAttribute(string value)
         {
             Value = value;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public string Value { get; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public static class StringEnum
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static string GetStringValue(Enum value)
         {
             string output = null;
