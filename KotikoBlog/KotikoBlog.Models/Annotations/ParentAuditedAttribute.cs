@@ -37,6 +37,9 @@ using System;
 
 namespace KotikoBlog.Models.Annotations
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [AttributeUsage(
         AttributeTargets.Class | AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Interface)]
     public class ParentAuditedAttribute : Attribute

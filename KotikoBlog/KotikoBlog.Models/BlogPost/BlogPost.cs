@@ -41,6 +41,9 @@ using KotikoBlog.Models.BlogPostTagMap;
 
 namespace KotikoBlog.Models.BlogPost
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class BlogPostModel
     {
         public virtual int ID { get; set; }
@@ -57,7 +60,9 @@ namespace KotikoBlog.Models.BlogPost
         public virtual IList<BlogPostTagMapModel> Tags { get; set; }
     }
 
-
+    /// <summary>
+    /// 
+    /// </summary>
     public class BlogPostMap : ClassMap<BlogPostModel>
     {
         public BlogPostMap()

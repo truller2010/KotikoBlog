@@ -40,6 +40,9 @@ using Newtonsoft.Json;
 
 namespace KotikoBlog.Models.BlogCategory
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class BlogCategoryModel
     {
         public virtual int ID { get; set; }
@@ -54,6 +57,9 @@ namespace KotikoBlog.Models.BlogCategory
         public virtual IList<BlogPostModel> Posts { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class BlogCategoryMap : ClassMap<BlogCategoryModel>
     {
         public BlogCategoryMap()

@@ -39,6 +39,9 @@ using KotikoBlog.Models.BlogTag;
 
 namespace KotikoBlog.Models.BlogPostTagMap
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class BlogPostTagMapModel
     {
         public virtual int Post_id { get; set; }
@@ -72,6 +75,9 @@ namespace KotikoBlog.Models.BlogPostTagMap
         #endregion
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class PostTagMapMap : ClassMap<BlogPostTagMapModel>
     {
         public PostTagMapMap()

@@ -39,6 +39,9 @@ using NHibernate.Envers.Configuration.Attributes;
 
 namespace KotikoBlog.Models.Revision
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [RevisionEntity(typeof (AppRevisionListener))]
     public class AppRevisionEntity : DefaultTrackingModifiedEntitiesRevisionEntity
     {
@@ -46,6 +49,9 @@ namespace KotikoBlog.Models.Revision
 
         //public virtual string DisplayName { get; set; }
 
+            /// <summary>
+            /// 
+            /// </summary>
         public class Properties
         {
             public const string RevisionDate = "RevisionDate";
@@ -60,8 +66,14 @@ namespace KotikoBlog.Models.Revision
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class AppRevisionEntityMap : ClassMap<AppRevisionEntity>
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public AppRevisionEntityMap()
         {
             Table("REVINFO");

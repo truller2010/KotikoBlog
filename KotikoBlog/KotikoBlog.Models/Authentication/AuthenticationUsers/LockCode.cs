@@ -31,6 +31,9 @@
 
 namespace KotikoBlog.Models.Authentication.AuthenticationUsers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class LockCode
     {
         public virtual string email { get; set; }

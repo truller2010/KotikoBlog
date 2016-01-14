@@ -37,6 +37,9 @@ using KotikoBlog.Core.Helper;
 
 namespace KotikoBlog.Models.Authentication.AuthenticationRoles
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public enum Rol
     {
         [StringValue("SUPERADMIN")] Superadministrador = 0,

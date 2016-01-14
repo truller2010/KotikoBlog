@@ -37,6 +37,9 @@ using System;
 
 namespace KotikoBlog.Models.Annotations
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [AttributeUsage(AttributeTargets.Property)]
     public class IDAttribute : Attribute
     {

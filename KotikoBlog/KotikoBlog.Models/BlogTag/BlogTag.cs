@@ -40,6 +40,9 @@ using Newtonsoft.Json;
 
 namespace KotikoBlog.Models.BlogTag
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class BlogTagModel
     {
         public virtual int ID { get; set; }
@@ -51,6 +54,9 @@ namespace KotikoBlog.Models.BlogTag
         public virtual IList<BlogPostTagMapModel> Posts { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class BlogTagMap : ClassMap<BlogTagModel>
     {
         public BlogTagMap()

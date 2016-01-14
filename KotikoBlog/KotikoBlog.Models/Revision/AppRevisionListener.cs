@@ -39,8 +39,15 @@ using NHibernate.Envers;
 
 namespace KotikoBlog.Models.Revision
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class AppRevisionListener : IRevisionListener
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="revisionEntity"></param>
         public void NewRevision(object revisionEntity)
         {
             var rev = revisionEntity as AppRevisionEntity;

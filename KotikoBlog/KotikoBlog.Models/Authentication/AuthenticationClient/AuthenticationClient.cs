@@ -38,6 +38,9 @@ using KotikoBlog.Models.Authentication.Enums;
 
 namespace KotikoBlog.Models.Authentication.AuthenticationClient
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class AuthenticationClient
     {
         public virtual string Id { get; set; }
@@ -49,8 +52,14 @@ namespace KotikoBlog.Models.Authentication.AuthenticationClient
         public virtual string Allowedorigin { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class AuthenticationClientMap : ClassMap<AuthenticationClient>
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public AuthenticationClientMap()
         {
             Table("Authentication_Client");

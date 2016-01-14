@@ -38,6 +38,9 @@ using FluentNHibernate.Mapping;
 
 namespace KotikoBlog.Models.Authentication.AuthenticationRefreshToken
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class AuthenticationRefreshToken
     {
         public virtual string Id { get; set; }
@@ -48,8 +51,14 @@ namespace KotikoBlog.Models.Authentication.AuthenticationRefreshToken
         public virtual string Protectedticket { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class AuthenticationRefreshtokenMap : ClassMap<AuthenticationRefreshToken>
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public AuthenticationRefreshtokenMap()
         {
             Table("Authentication_RefreshToken");

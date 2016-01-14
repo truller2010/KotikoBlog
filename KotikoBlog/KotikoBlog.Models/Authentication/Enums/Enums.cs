@@ -31,6 +31,9 @@
 
 namespace KotikoBlog.Models.Authentication.Enums
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public enum ApplicationTypes
     {
         JavaScript = 0,

@@ -40,6 +40,9 @@ using KotikoBlog.Models.Authentication.AuthenticationRoles;
 
 namespace KotikoBlog.Models.Authentication.AuthenticationUsers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class AuthenticationUsers
     {
         public virtual int Id { get; set; }
@@ -54,6 +57,9 @@ namespace KotikoBlog.Models.Authentication.AuthenticationUsers
         public virtual IList<Rol> Roles { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class AuthenticationUsersMap : ClassMap<AuthenticationUsers>
     {
         public AuthenticationUsersMap()
