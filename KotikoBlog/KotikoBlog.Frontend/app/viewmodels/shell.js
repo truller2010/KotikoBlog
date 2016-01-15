@@ -24,6 +24,8 @@
                 { route: 'tag(/:tag)', title: 'Posts', moduleId: 'viewmodels/tag/tag', nav: true, hash: '#tag(/:tag)' },
                 { route: 'category(/:cat)', title: 'Posts', moduleId: 'viewmodels/category/category', nav: true, hash: '#category(/:cat)' },
                 { route: 'archives(/:year)(/:month)', title: 'Posts', moduleId: 'viewmodels/archives/archives', nav: true, hash: '#archives(/:year)(/:month)' },
+
+                { route: '404', title: 'Posts', moduleId: 'viewmodels/404', nav: true, hash: '#404' },
             ];
 
             return router.map(routes).buildNavigationModel().activate();

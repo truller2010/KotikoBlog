@@ -98,7 +98,7 @@ define(['plugins/dialog', 'durandal/system', 'durandal/app', 'durandal/viewLocat
         ko.bindingHandlers.validate = validateBinding;
         ko.bindingHandlers.selectedOptionsObject = selectedOptionsObjectBinding;
 
-        app.title = 'SNIRH';
+        app.Title = 'SNIRH';
 
         app.configurePlugins({
             router: true,
@@ -112,7 +112,7 @@ define(['plugins/dialog', 'durandal/system', 'durandal/app', 'durandal/viewLocat
         app.start().then(function () {
             i18n.init(i18NOptions, function () {
                 console.log(i18n);
-                app.title = i18n.t('app:title');
+                app.title = i18n.t('app:Title');
 
                 //Replace 'viewmodels' in the moduleId with 'views' to locate the view.
                 //Look for partial views in a 'views' folder in the root.

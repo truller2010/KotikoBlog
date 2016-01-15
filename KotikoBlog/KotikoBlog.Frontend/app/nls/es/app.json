@@ -11,7 +11,8 @@
     "UndeclaredThrowableException": "¡Oops! Se ha producido un error. No se han podido obtener los datos."
   },
   "Buttons": {
-    "Back": "Volver"
+    "Back": "Anterior",
+    "Next": "Siguiente"
   },
   "Pages": {
     "Welcome": {

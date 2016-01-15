@@ -23,6 +23,8 @@ define(
     function PostsPaginatedViewModel($, config, i18n, stringUtils,
                         findRequestImpl, pageImpl, pagerImpl, pageRequestImpl, validationUtils,
                         app, alerts, shell, BlogPostBroker, BlogPostFilterImpl, BlogPostSortImpl, BlogPostImpl, BlogCategoryBroker, BlogTagBroker) {
+
+        
         var viewModel = {},
             PAGE_SIZE = config.PAGE_SIZE,
             PAGE_SIZES = config.PAGE_SIZES,
@@ -38,6 +40,8 @@ define(
 
             activeOptions = [{ id: 0, name: i18n.t('NO') },
                            { id: 1, name: i18n.t('YES') }];
+
+
 
         // lifecycle definition
         function activate() {
@@ -120,6 +124,12 @@ define(
             return search();
         }
 
+        isLoading: ko.computed(function() {
+            return brokerUtils.requestCount > 0 || router.isNavigating();
+        });
+
+
+        viewModel.isLoading = isLoading;
         viewModel.archivesArray = archivesArray;
         viewModel.categoryArray = categoryArray;
         viewModel.tagArray = tagArray;

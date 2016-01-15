@@ -131,7 +131,7 @@
     <Content Include="app\domain\test\testImpl.js" />
     <Content Include="app\domain\test\testSortImpl.js" />
     <Content Include="app\main.js" />
-    <Content Include="app\viewmodels\401.js" />
+    <Content Include="app\viewmodels\404.js" />
     <Content Include="app\viewmodels\About\About.js" />
     <Content Include="app\viewmodels\alerts.js" />
     <Content Include="app\viewmodels\Archives\Archives.js" />
@@ -142,7 +142,7 @@
     <Content Include="app\viewmodels\shell.js" />
     <Content Include="app\viewmodels\Tag\Tag.js" />
     <Content Include="app\viewmodels\welcome.js" />
-    <Content Include="app\views\401.html" />
+    <Content Include="app\views\404.html" />
     <Content Include="app\views\About\About.html" />
     <Content Include="app\views\alerts.html" />
     <Content Include="app\views\Archives\Archives.html" />
