@@ -4,7 +4,8 @@ define([
     'jquery'
 ], function WelcomeViewModel(
     i18n,
-    $
+    $,
+    dialog
     ) {
     "use strict";
     var self = this;
